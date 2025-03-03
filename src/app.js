@@ -43,6 +43,26 @@ window.addEventListener('DOMContentLoaded', () => {
 	}
 	typeWriter(text, inputText + ' ', 10)
 
+	// анимация картинки Hero секции при скролле
+	const heroSection = document.getElementById('Hero')
+	window.addEventListener('scroll', () => {
+		// Переменная translateY содержит в себе
+		const scrollPositionY =
+			window.pageYOffset || document.documentElement.scrollTop
+		heroSection.style.setProperty('--translateY', `-${scrollPositionY / 8}px`)
+	})
+
+	// Функционал бургер меню
+	const burgerMenu = document.querySelector('.burgerMenu')
+	const navigationDialog = document.querySelector('.navigationDialog')
+	const navigationDialogList = document.querySelector('.navigationDialogList')
+	burgerMenu.addEventListener('click', () => {
+		navigationDialog.showModal()
+	})
+	navigationDialogList.addEventListener('click', event => {
+		navigationDialog.close()
+	})
+
 	// Предотвращаем перезагрузку страницы после отправки формы
 	const feedBackForm = document.querySelectorAll('.feedBackForm--js')
 	feedBackForm.forEach(form => {
@@ -51,11 +71,12 @@ window.addEventListener('DOMContentLoaded', () => {
 		})
 	})
 
-	// анимация картинки Hero секции при скролле
-	const heroSection = document.getElementById('Hero')
-	window.addEventListener('scroll', () => {
-		// Переменная translateY содержит в себе 
-		const scrollPositionY = window.pageYOffset || document.documentElement.scrollTop
-		heroSection.style.setProperty('--translateY', `-${scrollPositionY / 8}px`)
+	// Функционал обратной связи
+	const feedBackButton = document.querySelectorAll('.feedBackButton')
+	const feedBackDialog = document.querySelector('.feedBackDialog')
+	feedBackButton.forEach(button => {
+		button.addEventListener('click', () => {
+			feedBackDialog.showModal()
+		})
 	})
 })

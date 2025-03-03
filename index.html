@@ -37,6 +37,25 @@
 							>Зарегистрироваться</a
 						>
 					</form>
+
+					<div class="burgerMenu burgerMenu__headerInner">
+						<span style='--i:0' class="burgerItem animation"></span>
+						<span style='--i:1' class="burgerItem animation"></span>
+						<span style='--i:2' class="burgerItem animation"></span>
+					</div>
+
+					<dialog class='navigationDialog' role="navigation" aria-label="Модальное окно навигации">
+						<form method='dialog'>
+							<ul class='navigationDialogList'>
+								<li class="animation"><a href="#Header" title='Главная'>Главная</a></li>
+								<li class="animation"><a href="#AboutUs" title='О нас'>О нас</a></li>
+								<li class="animation"><a href="#Review" title='Отзывы'>Отзывы</a></li>
+								<li class="animation">
+									<a href="#Footer" title='Контакты'>Контакты</a>
+								</li>
+							</ul>
+						</form>
+					</dialog>
 				</div>
 			</div>
 		</header>
@@ -366,9 +385,19 @@
 										class='animation'
 										autocomplete='off'
 									>
-									<button title='Отправить' class='animation'></button>
+									<button title='Отправить' class='animation feedBackButton'></button>
 								</div>
 							</form>
+							<dialog class='feedBackDialog'>
+								<span class='defaultText'>
+									Спасибо за обратную связь
+								</span>
+								<form method='dialog'>
+									<button type='submit'>
+										Ок
+									</button>
+								</form>
+							</dialog>
 						</div>
 					</section>
 					<section class='footerBottom'>
